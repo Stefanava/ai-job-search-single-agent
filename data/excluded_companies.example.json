@@ -1,0 +1,7 @@
+[
+  { "company": "Acme Corp", "status": "applied - awaiting response" },
+  { "company": "Globex", "status": "rejected" },
+  { "company": "Initech", "status": "rejected - no visa sponsorship" },
+  { "company": "Umbrella Industries", "status": "likely dead, no formal rejection" },
+  { "company": "Soylent Co", "status": "reconsidering - previously paused, may resume" }
+]

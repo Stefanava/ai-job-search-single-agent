@@ -1,0 +1,15 @@
+node_modules
+.env
+.DS_Store
+
+# Real job-search data and personal documents - never commit. See
+# data/excluded_companies.example.json and context/example/ for fake
+# stand-ins with the same shape, so the repo stays runnable without them.
+data/excluded_companies.json
+data/leads.json
+data/drafts.json
+data/run_log.jsonl
+context/*
+!context/README.md
+!context/example/
+evals/results/

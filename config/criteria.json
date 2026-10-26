@@ -1,0 +1,36 @@
+{
+  "role_titles": [
+    "Engineering Manager",
+    "Head of Engineering",
+    "Engineering Lead"
+  ],
+  "location_rules": {
+    "remote_first": "allowed if open to candidates based in the UK or Europe",
+    "europe_office": "allowed if the role is based in a European office AND the company offers relocation support or visa sponsorship, or plausibly hires from the UK. If the listing doesn't say, flag it for human confirmation - never assume either way, and never silently drop it.",
+    "why": "The candidate is UK-based and open to relocating within Europe, so the deciding question is whether they can work in the role's location. The search focuses on remote and relocation-friendly roles because boards built for them (relocate.me, Wellfound, Himalayas) state location eligibility clearly and are practical for an agent to search, unlike LinkedIn or Indeed."
+  },
+  "compensation_floor": {
+    "gbp": null,
+    "eur": null,
+    "rule": "include if unstated; include if above floor; exclude only if a stated figure is clearly and substantially below it",
+    "note": "Left blank in the committed version - this is a real negotiating position, not something to publish. Set your own numbers in a local, uncommitted edit."
+  },
+  "job_sources": [
+    "relocate.me",
+    "wellfound.com",
+    "himalayas.app"
+  ],
+  "meetup_sources": [
+    "meetup.com",
+    "eventbrite.com"
+  ],
+  "meetup_locations": [
+    "London"
+  ],
+  "meetup_topics": [
+    "AI / agentic tooling",
+    "engineering leadership",
+    "tech networking"
+  ],
+  "notes_for_editing": "This file is the whole point of extending the agent without touching code. Add/remove sources, adjust the comp floor, or add new role titles here."
+}

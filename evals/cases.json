@@ -1,0 +1,47 @@
+{
+  "description": "Fixed, human-labelled test cases for the compensation-floor rule in config/criteria.json. Uses a fake fixture floor, not the real one - the real floor is redacted to null in the committed criteria.json, and this file must never be edited to use real figures. Each case has a reference decision a person judged in advance, so a rule-wording change (or a model change) can be checked against a known-good answer rather than trusting a live run on faith.",
+  "fixture_floor": {
+    "gbp": 80000,
+    "eur": 90000,
+    "rule": "include if unstated; include if above floor; exclude only if a stated figure is clearly and substantially below it",
+    "note": "FIXTURE VALUES ONLY - not the real compensation floor. Do not replace with real numbers."
+  },
+  "cases": [
+    {
+      "id": "clear_above_floor",
+      "why": "Comfortably above the fixture floor - unambiguous include.",
+      "stated_compensation": "£145,000",
+      "reference": { "decision": "include" }
+    },
+    {
+      "id": "clear_below_floor_gbp",
+      "why": "Roughly half the fixture floor - unambiguous exclude.",
+      "stated_compensation": "£42,000",
+      "reference": { "decision": "exclude" }
+    },
+    {
+      "id": "clear_below_floor_eur",
+      "why": "Same as above but in EUR, to check the rule isn't only being applied to GBP figures.",
+      "stated_compensation": "€35,000",
+      "reference": { "decision": "exclude" }
+    },
+    {
+      "id": "unstated",
+      "why": "No compensation mentioned at all - the rule explicitly says include if unstated, not exclude out of caution.",
+      "stated_compensation": "",
+      "reference": { "decision": "include" }
+    },
+    {
+      "id": "vague_not_a_figure",
+      "why": "A vague phrase rather than a number - should still be treated as unstated, not parsed as a low figure or excluded for being unclear.",
+      "stated_compensation": "Listing says \"competitive salary, negotiable\" with no specific number given.",
+      "reference": { "decision": "include" }
+    },
+    {
+      "id": "borderline_just_below_floor",
+      "why": "A small gap below the floor (~7.5%) - tests whether \"clearly and substantially below\" is actually applied as a qualifier, rather than any figure below the floor being excluded.",
+      "stated_compensation": "£74,000",
+      "reference": { "decision": "include" }
+    }
+  ]
+}

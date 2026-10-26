@@ -1,0 +1,15 @@
+{
+  "name": "ai-job-search-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A small Claude-API-powered agent that scans job boards and meetups for an Engineering Manager job search.",
+  "main": "src/agent.js",
+  "scripts": {
+    "start": "node --env-file=.env src/agent.js",
+    "eval:compensation": "node --env-file=.env evals/run_compensation_eval.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest"
+  }
+}
